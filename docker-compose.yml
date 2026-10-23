@@ -1,0 +1,10 @@
+services:
+  thermwet-xslt-proxy:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      # Ventbox address - the only place the device IP is configured
+      THERMWET_HOST: 192.168.1.78
+      PORT: 8080
+    restart: unless-stopped
